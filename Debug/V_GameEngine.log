@@ -1,0 +1,8 @@
+﻿  game.cpp
+C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Asteroids.h(17,29): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Asteroids.h(18,29): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Asteroids.h(21,33): warning C4244: 'initializing': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\game.cpp(93,23): warning C4244: 'initializing': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\game.cpp(149,32): warning C4244: '=': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\game.cpp(185,21): warning C4018: '<': signed/unsigned mismatch
+  V_GameEngine.vcxproj -> C:\Users\14168\source\repos\V_GameEngine\Debug\V_GameEngine.exe
