@@ -1,4 +1,4 @@
-# Asteroids Version 0.1
+# Asteroids Version 0.2
 
 Asteroids made in **C++** using **OpenGL** and **GLFW**. 
 
