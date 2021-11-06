@@ -55,8 +55,8 @@ GLuint Shader::Load(std::string &vs, std::string &fs) {
 
 void Shader::setUniform(GLuint &sp, const char* name, glm::mat4 matrix){
 	GLuint v1 = glGetUniformLocation(sp, name);
-	if (v1 == -1) { std::cout << "Uniform variable " << name << " not found!" << std::endl;}
-	else { std::cout << "Uniform found!" << std::endl; }
+	/*if (v1 == -1) { std::cout << "Uniform variable " << name << " not found!" << std::endl;}
+	else { std::cout << "Uniform found!" << std::endl; }*/
 	glUniformMatrix4fv(v1, 1, GL_FALSE, glm::value_ptr(matrix));
 }
 

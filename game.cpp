@@ -7,7 +7,7 @@
 #include <vector>
 #include "Renderer.h"
 #include "Asteroids.h"
-
+#include "Bullet.h"
 
 Game::Game() {}
 Game::~Game(){}
@@ -43,7 +43,7 @@ void Game::Run() {
 	//GLuint t1 = r1.rec.bufferint();
 
 	//glm::mat4 proj = glm::perspective(45.0f, (GLfloat) w_width / w_length, 0.0f, 150.0f);
-	glm::mat4 proj = glm::ortho(-20.0f, 20.0f, -20.0f, 20.0f, -1.0f, 1.0f);
+	glm::mat4 proj = glm::ortho(-800.0f, 800.0f, -600.0f, 600.0f, -1.0f, 1.0f);
 	s1.setUniform(t, "Projection", proj);
 	s1.setUniform(t, "Transform", glm::mat4(1.0f));
 	
@@ -57,19 +57,38 @@ void Game::Run() {
 
 	// Player Characteristics
 
-	glm::vec3 pos = glm::vec3(1.0f, 0.0f, 1.0f);
+	glm::vec3 pos = glm::vec3(0.0f, 1.0f, 1.0f);
 	glm::vec3 axis = glm::vec3(0.0f, 0.0f, 1.0f);
 	GLfloat angle = 0.0f;
 	GLfloat velocity = 0.0f;
-	GLfloat acceleration = 10.0f;
+	GLfloat acceleration = 200.0f;
 	bool Engine = false;
 
 	GLfloat refangle = angle;
 
+	//Bullet Characteristics
+	std::vector<Bullet>barr{};
+	bool bulletstat = true;
+
+
+
 	// Asteroids
 
-	Asteroids testAst, Ast1, Ast2, ast3, ast4;
-	std::vector<Asteroids>arr{ Ast1, Ast2 };
+	Asteroids* Ast1 = new Asteroids;
+	Asteroids* Ast2 = new Asteroids;
+	/*ast3, ast4;*/
+
+	std::vector<Asteroids*>arr{ Ast1, Ast2 };
+
+	//Create 28 Asteroid Objects initially
+	//When impact, 
+	
+	std::vector<Asteroids*>arr1;
+	for (int i = 0; i < 28; i++) {
+		arr1.push_back(new Asteroids);
+	}
+
+
 	//Asteroids arr[4]{ Ast1, Ast2 };
 
 	bool AstHit = false;
@@ -101,7 +120,7 @@ void Game::Run() {
 		if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS) {
 			/*pos.y += (velocity * deltatime * cos(angle));
 			pos.x += (velocity * deltatime * -sin(angle));*/
-			if (velocity < 50.0f) {
+			if (velocity < 800.0f) {
 				velocity += (acceleration * deltatime);
 			}
 			pos.y += (velocity * deltatime * cos(angle));
@@ -126,11 +145,19 @@ void Game::Run() {
 		//Accel Check
 		
 
-		std::cout << "Velocity: " << velocity << std::endl;
+		//std::cout << "Velocity: " << velocity << std::endl;
 
-		if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS) {
-			pos.y -= (10.0f * deltatime);
+		if (glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_PRESS && bulletstat == true) {
+			Bullet b1(pos, angle);
+			std::cout << pos.x << " " << pos.y << std::endl;
+			barr.push_back(b1);
+			bulletstat = false;
 		}
+
+		if (glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_RELEASE && bulletstat == false) {
+			bulletstat = true;
+		}
+
 
 		if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS) {		 
 			angle -= 2.0f * deltatime;			
@@ -142,30 +169,49 @@ void Game::Run() {
 			//axis.z = -1.0f;
 
 		}
+		
+		//Old Asteroid Spawning Test code -->IGNORE
 
-		if (glfwGetKey(window, GLFW_KEY_R) == GLFW_PRESS) {
+		/*if (glfwGetKey(window, GLFW_KEY_R) == GLFW_PRESS) {
 			ast3.astsize = arr[arr.size() - 1].astsize/2.0f;
 			ast3.astpos = arr[arr.size() - 1].astpos;
 			ast3.astangle = rand() % 25 + 10;
 			arr.push_back(ast3);
-		}
+		}*/
+
+		//Old Asteroid Spawning Test code -->IGNORE
 
 		
 		//Collision Check	
 		
-		std::cout << pos.x << std::endl;
+		//std::cout << pos.x << std::endl;
 
-		if (pos.x + 0.5f <= -20.0f || pos.x - 0.5f >= 20.0f) {
+		if (pos.x + 25.0f <= -800.0f || pos.x - 25.0f >= 800.0f) { 
 			std::cout << "Collision Detected" << std::endl;
 			pos.x *= -1.0f;
 
 		}
 
-		if (pos.y + 1.5f <= -20.0f || pos.y - 1.5f >= 20.0f) {
+		if (pos.y + 50.0f <= -600.0f || pos.y - 50.0f >= 600.0f) {
 			std::cout << "Collision Detected" << std::endl;
 			pos.y *= -1.0f;
 
 		}
+
+
+		//Bullet Check
+
+		for (int i = 0; i < barr.size(); i++) {
+			if (!barr[i].Impact) {
+				barr[i].BulletDraw(barr[i].b1.VAO, s1, t, deltatime);
+				barr[i].BulletCollision(arr);
+			}
+			if (barr[i].Impact) {
+				barr.erase(barr.begin() + i);
+			}
+		}	
+
+		
 
 
 		/*if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS) {
@@ -183,13 +229,14 @@ void Game::Run() {
 		// Asteroid renderer
 
 		for (int i = 0; i < arr.size(); i++) {
-			arr[i].AsteroidDraw(arr[i].a1.VAO, s1, t, deltatime);
-			arr[i].AsteroidCollisionCheck();				
+			arr[i]->AsteroidDraw(arr[i]->a1.VAO, s1, t, deltatime);
+			arr[i]->AsteroidCollisionCheck();		
+			//std::cout << "Asteroid ID: " << i << " " << arr[i]->astsize.x << std::endl;
+			//std::cout << arr[i].astpos.x << " " << arr[i].astpos.y << std::endl;
 		}
 		
 		
 		
-
 
 		/*if (glfwGetKey(window, GLFW_KEY_E) == GLFW_PRESS) {
 			glm::mat4 model = glm::mat4(1.0f);
