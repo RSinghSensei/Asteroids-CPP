@@ -153,6 +153,7 @@
     <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="Shader.cpp" />
     <ClCompile Include="Shape.cpp" />
+    <ClCompile Include="stbi_image.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Asteroids.h" />
@@ -162,6 +163,8 @@
     <ClInclude Include="Shader.h" />
     <ClInclude Include="ShaderStream.h" />
     <ClInclude Include="Shapes.h" />
+    <ClInclude Include="stb_image.h" />
+    <ClInclude Include="TextureLoader.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="sample.txt" />
@@ -169,6 +172,9 @@
   <ItemGroup>
     <None Include="shader.frag" />
     <None Include="shader.vert" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Asteroid.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -14,6 +14,7 @@ void Renderer::Draw(GLuint& VAO, Shader ref, GLuint &t1, glm::vec3 &pos, GLfloat
 	model = glm::rotate(model, angle, axis);
 	model = glm::scale(model, glm::vec3(50.0f, 100.0f, 1.0f));
 	
+	// Vertices of player
 	
 	
 

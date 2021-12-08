@@ -27,25 +27,38 @@ void Asteroids::AsteroidCollisionCheck() {
 
 	if (this->astpos.x + (this->astsize.x / 2) <= -800.0f || this->astpos.x - (this->astsize.x / 2) >= 800.0f) {
 		this->astpos.x *= -1;
+		std::cout << "Buffer Zone" << std::endl;
 	}
-	if (this->astpos.y + (this->astsize.y / 2) <= -800.0f || this->astpos.y - (this->astsize.y / 2) >= 800.0f) {
+	if (this->astpos.y + (this->astsize.y / 2) <= -600.0f || this->astpos.y - (this->astsize.y / 2) >= 600.0f) {
 		this->astpos.y *= -1;
+		std::cout << "Buffer Zone" << std::endl;
 	}
-	//if (this->astpos.x + (this->astsize.x / 2) <= -2.0f) {
-	//	std::cout << "Asteroid Collision" << std::endl;
-	//	//this->astpos.x *= -1;
-	//	this->astpos.x = 802.5f;
-	//}
-	//if (this->astpos.x - (this->astsize.x / 2) >= 800.0f){
-	//	this->astpos.x = -0.5f;
-	//}
-	//if (this->astpos.y + (this->astsize.y / 2) <= -2.0f) {
-	//	std::cout << "Asteroid Collision" << std::endl;
-	//	//this->astpos.y *= -1;
-	//	this->astpos.y = 601.5f;
-	//}
-	//if (this->astpos.y - (this->astsize.y / 2) >= 600.0f) {
-	//	this->astpos.y = -0.5f;
-	//}
+
+}
+
+std::vector<glm::vec2>Asteroids::VertexPos() {
+	std::vector<glm::vec2>v1;
+	glm::vec2 aTR = glm::vec2(this->astpos.x + (this->astsize.x / 2), this->astpos.y + (this->astsize.y / 2));
+	glm::vec2 aTL = glm::vec2(this->astpos.x - (this->astsize.x / 2), this->astpos.y + (this->astsize.y / 2));
+	glm::vec2 aBL = glm::vec2(this->astpos.x - (this->astsize.x / 2), this->astpos.y - (this->astsize.y / 2));
+	glm::vec2 aBR = glm::vec2(this->astpos.x + (this->astsize.x / 2), this->astpos.y - (this->astsize.y / 2));
+	v1.push_back(aTR);
+	v1.push_back(aTL);
+	v1.push_back(aBL);
+	v1.push_back(aBR);
+
+	//std::cout << this->astpos.x - (this->astsize.x / 2) << " ";
+	//std::cout << (this->astpos.y + (this->astsize.y / 2)) << std::endl;
+	//std::cout << this->astpos.x + (this->astsize.x / 2) << " ";
+	//std::cout << this->astpos.y + (this->astsize.y / 2) << std::endl;
+	//std::cout << this->astpos.x - (this->astsize.x / 2) << " ";
+	//std::cout << this->astpos.y - (this->astsize.y / 2) << std::endl;
+	//std::cout << this->astpos.x + (this->astsize.x / 2) << " ";
+	//std::cout << this->astpos.y - (this->astsize.y / 2) << std::endl;
+
+	return v1;
+}
+
+void Asteroids::Vposcheck() {
 
 }

@@ -11,6 +11,8 @@ public:
 
 	void AsteroidDraw(GLuint& VAO, Shader ref, GLuint& t1, GLfloat dt);
 	void AsteroidCollisionCheck();
+	std::vector<glm::vec2>VertexPos();
+	void Vposcheck();
 
 	Shape a1;
 	glm::vec3 astpos = glm::vec3(600.0f, 100.0f, 1.0f);

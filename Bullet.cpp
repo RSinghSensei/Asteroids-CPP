@@ -39,6 +39,7 @@ void Bullet::BulletCollision(std::vector<Asteroids*>& astcheck) {
 			astcheck[i]->astpos.y + (astcheck[i]->astsize.y/2) > this->bulpos.y - (this->Bulletsize.y/2))						
 		{
 			std::cout << "Bullet ast collision" << std::endl;
+			astcheck[i]->VertexPos();
 			Impact = true;
 			if (astcheck[i]->astsize.x > 50.0f) {
 				Asteroids *tempast = new Asteroids;
