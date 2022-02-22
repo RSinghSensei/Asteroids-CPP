@@ -18,25 +18,25 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="game.cpp">
+    <ClCompile Include="Game\game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Shape.cpp">
+    <ClCompile Include="Shapes\Shape.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Triangle\Triangle\glad.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Shader.cpp">
+    <ClCompile Include="Shader\Shader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Renderer.cpp">
+    <ClCompile Include="Renderer\Renderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Asteroids.cpp">
+    <ClCompile Include="Asteroids\Asteroids.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Bullet.cpp">
+    <ClCompile Include="Bullet\Bullet.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="stb.cpp">
@@ -44,70 +44,45 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="game.h">
+    <ClInclude Include="Game\game.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="Shapes.h">
+    <ClInclude Include="Shapes\Shapes.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="ShaderStream.h">
+    <ClInclude Include="Shader\ShaderStream.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="Shader.h">
+    <ClInclude Include="Shader\Shader.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="Renderer.h">
+    <ClInclude Include="Renderer\Renderer.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="Asteroids.h">
+    <ClInclude Include="Asteroids\Asteroids.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="Bullet.h">
+    <ClInclude Include="Bullet\Bullet.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="sample.txt">
+    <Text Include="Shader\sample.txt">
       <Filter>Source Files</Filter>
     </Text>
   </ItemGroup>
   <ItemGroup>
-    <None Include="shader.vert">
+    <None Include="Shader\shader.vert">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="shader.frag">
+    <None Include="Shader\shader.frag">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="screenTextShader.vert">
+    <None Include="Shader\screenTextShader.vert">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="screenTextShader.frag">
+    <None Include="Shader\screenTextShader.frag">
       <Filter>Source Files</Filter>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="Asteroid.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="..\..\..\..\Downloads\spaceship.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="..\..\..\..\Downloads\bulletsprite.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="..\..\..\..\Downloads\pixelBulletSprite.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="..\..\..\..\Downloads\pixelSpaceShip.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="..\..\..\..\Downloads\fireballbullet1.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-  </ItemGroup>
-  <ItemGroup>
-    <Media Include="..\..\..\..\Downloads\breakout.wav">
-      <Filter>Resource Files</Filter>
-    </Media>
   </ItemGroup>
 </Project>

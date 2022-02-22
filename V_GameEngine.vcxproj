@@ -150,43 +150,32 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Triangle\Triangle\glad.c" />
-    <ClCompile Include="Asteroids.cpp" />
-    <ClCompile Include="Bullet.cpp" />
-    <ClCompile Include="game.cpp" />
+    <ClCompile Include="Asteroids\Asteroids.cpp" />
+    <ClCompile Include="Bullet\Bullet.cpp" />
+    <ClCompile Include="Game\game.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Renderer.cpp" />
-    <ClCompile Include="Shader.cpp" />
-    <ClCompile Include="Shape.cpp" />
+    <ClCompile Include="Renderer\Renderer.cpp" />
+    <ClCompile Include="Shader\Shader.cpp" />
+    <ClCompile Include="Shapes\Shape.cpp" />
     <ClCompile Include="stb.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Asteroids.h" />
-    <ClInclude Include="Bullet.h" />
-    <ClInclude Include="game.h" />
-    <ClInclude Include="Renderer.h" />
-    <ClInclude Include="Shader.h" />
-    <ClInclude Include="ShaderStream.h" />
-    <ClInclude Include="Shapes.h" />
+    <ClInclude Include="Asteroids\Asteroids.h" />
+    <ClInclude Include="Bullet\Bullet.h" />
+    <ClInclude Include="Game\game.h" />
+    <ClInclude Include="Renderer\Renderer.h" />
+    <ClInclude Include="Shader\Shader.h" />
+    <ClInclude Include="Shader\ShaderStream.h" />
+    <ClInclude Include="Shapes\Shapes.h" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="sample.txt" />
+    <Text Include="Shader\sample.txt" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="screenTextShader.frag" />
-    <None Include="screenTextShader.vert" />
-    <None Include="shader.frag" />
-    <None Include="shader.vert" />
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="..\..\..\..\Downloads\bulletsprite.png" />
-    <Image Include="..\..\..\..\Downloads\fireballbullet1.png" />
-    <Image Include="..\..\..\..\Downloads\pixelBulletSprite.png" />
-    <Image Include="..\..\..\..\Downloads\pixelSpaceShip.png" />
-    <Image Include="..\..\..\..\Downloads\spaceship.png" />
-    <Image Include="Asteroid.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Media Include="..\..\..\..\Downloads\breakout.wav" />
+    <None Include="Shader\screenTextShader.frag" />
+    <None Include="Shader\screenTextShader.vert" />
+    <None Include="Shader\shader.frag" />
+    <None Include="Shader\shader.vert" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />

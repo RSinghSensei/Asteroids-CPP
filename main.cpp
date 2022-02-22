@@ -2,9 +2,9 @@
 #include <string>
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
-#include "game.h"
-#include "ShaderStream.h"
-#include "Shader.h"
+#include "Game/game.h"
+#include "Shader/ShaderStream.h"
+#include "Shader/Shader.h"
 
 
 int main(void)
