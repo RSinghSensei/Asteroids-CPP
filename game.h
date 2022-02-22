@@ -10,7 +10,7 @@ public:
 	~Game();
 	void Run();
 private:
-	GLFWwindow* window;
+	GLFWwindow* window = nullptr;
 	const int w_width = 800, w_length = 600;	
 	
 

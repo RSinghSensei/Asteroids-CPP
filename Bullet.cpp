@@ -9,6 +9,7 @@ Bullet::Bullet(const glm::vec3 playerpos, const GLfloat angle) {
 }
 
 void Bullet::BulletDraw(GLuint& VAO, Shader ref, GLuint& t1, GLfloat dt) {
+	glBindTexture(GL_TEXTURE_2D, b1.texture);
 	glBindVertexArray(VAO); 
 
 	glm::mat4 model(1.0f);

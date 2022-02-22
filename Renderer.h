@@ -11,7 +11,7 @@ public:
 	~Renderer();
 	void Draw(GLuint &VAO, Shader ref, GLuint& t1, glm::vec3 &pos, GLfloat angle, glm::vec3 &axis);
 
-	Shape rec;
+	ShipShape rec;
 
 };
 

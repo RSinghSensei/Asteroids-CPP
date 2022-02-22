@@ -1,0 +1,48 @@
+[33mcommit 75469c644768b2c95548c9c4cbd7530e96fcd155[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Merge: 7c20402 e82df6c
+Author: RSensei <ritvik.singh@mail.utoronto.ca>
+Date:   Fri Nov 5 23:30:38 2021 -0400
+
+    Merge branch 'master' of https://github.com/RSinghSensei/Asteroids-CPP
+
+[33mcommit 7c204022a23729bad58f53cb807a5d3e8bb23cf0[m
+Author: RSensei <ritvik.singh@mail.utoronto.ca>
+Date:   Fri Nov 5 23:24:14 2021 -0400
+
+    Added Collisions, Asteroid Levels
+
+[33mcommit e82df6ca53370e930282986054c9affc0fbc064f[m
+Author: Ritvik Singh <77813397+RSinghSensei@users.noreply.github.com>
+Date:   Thu Oct 21 19:43:57 2021 -0400
+
+    Delete include/KHR directory
+
+[33mcommit 63559fa715e77496e3d111ca1f7be095d662d28b[m
+Author: Ritvik Singh <77813397+RSinghSensei@users.noreply.github.com>
+Date:   Thu Oct 21 19:43:27 2021 -0400
+
+    Delete include/glm-0.9.9.8 directory
+
+[33mcommit 9ed3cac45f634ec7e647192376fb36f0ba8cde52[m
+Author: Ritvik Singh <77813397+RSinghSensei@users.noreply.github.com>
+Date:   Thu Oct 21 19:41:55 2021 -0400
+
+    Create README.md
+
+[33mcommit 45bc8ca71134784585fef6e13527de577add87f8[m
+Author: Ritvik Singh <77813397+RSinghSensei@users.noreply.github.com>
+Date:   Thu Oct 21 19:39:13 2021 -0400
+
+    Delete README.md
+
+[33mcommit 5cb1752ddb080216ed978e1ac18cf93d45893316[m
+Author: Ritvik Singh <77813397+RSinghSensei@users.noreply.github.com>
+Date:   Thu Oct 21 19:31:47 2021 -0400
+
+    Create README.md
+
+[33mcommit c0c13334e343e18d947bf729e784d11f9eb50ca7[m
+Author: RSensei <ritvik.singh@mail.utoronto.ca>
+Date:   Thu Oct 21 19:17:16 2021 -0400
+
+    Version 0.1

@@ -1,10 +1,10 @@
 #include "game.h"
 #include "Shapes.h"
 #include "Shader.h"
-#include "Shapes.h"
 #include "ShaderStream.h"
 #include <glm-0.9.9.8/glm/gtx/string_cast.hpp>
 #include <vector>
+#include <Windows.h>
 #include "Renderer.h"
 #include "Asteroids.h"
 #include "Bullet.h"
@@ -94,7 +94,7 @@ void Game::Run() {
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 	window = glfwCreateWindow(w_width, w_length, "V", NULL, NULL);
-	if (window == NULL) {
+	if (window == nullptr) {
 		std::cout << "Window could not be instatiated" << std::endl;
 	}	
 	glfwMakeContextCurrent(window);
@@ -103,10 +103,22 @@ void Game::Run() {
 
 	std::cout << glGetString(GL_VERSION) << std::endl;
 
+	// ScreenText Properties Initialization
+	
+
+
+	// Screen Text Shader
+	/*std::string screenVS = ShaderStream::ReadShaderSource("screenTextShader.vert");
+	std::string screenFS = ShaderStream::ReadShaderSource("screenTextShader.frag");
+	Shader s2;
+	GLuint screenTextID = s2.Load(screenVS, screenFS);*/
+
+	// Main Shader
 	std::string vs = ShaderStream::ReadShaderSource("shader.vert");
 	std::string fs = ShaderStream::ReadShaderSource("shader.frag");
 	Shader s1;
 	GLuint t = s1.Load(vs, fs);
+
 
 
 	Renderer r1;
@@ -120,7 +132,7 @@ void Game::Run() {
 	glm::mat4 model = glm::mat4(1.0f);
 	
 
-	glClearColor(0.5f, 0.0f, 0.5f, 1.0f);
+	glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 
 	GLfloat deltatime = 0.0f;
 	GLfloat lastframe = 0.0f;
@@ -139,7 +151,7 @@ void Game::Run() {
 	// Player Vertices
 
 	//Bullet Characteristics
-	std::vector<Bullet>barr{};
+	std::vector<Bullet*>barr{};
 	bool bulletstat = true;
 
 
@@ -169,10 +181,8 @@ void Game::Run() {
 	//GLuint t2 = testAst.a1.bufferint();
 	/*glm::vec3 a1pos = glm::vec3(10.0f, 10.0f, 1.0f);
 	glm::vec3 a1size = glm::vec3(10.0f, 10.0f, 1.0f);*/
-		
-	
 
-
+	//PlaySound("..\\..\\..\\..\\Downloads\\breakout.wav", NULL, SND_ASYNC | SND_FILENAME | SND_LOOP);
 
 	
 	while (!glfwWindowShouldClose(window)) {
@@ -229,9 +239,9 @@ void Game::Run() {
 
 		
 
-
+		// Have to change this up, creating texture on the go isn't it
 		if (glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_PRESS && bulletstat == true) {
-			Bullet b1(pos, angle);
+			Bullet* b1 = new Bullet(pos, angle);
 			std::cout << pos.x << " " << pos.y << std::endl;
 			barr.push_back(b1);
 			bulletstat = false;
@@ -301,11 +311,11 @@ void Game::Run() {
 		//Bullet Check
 
 		for (int i = 0; i < barr.size(); i++) {
-			if (!barr[i].Impact) {
-				barr[i].BulletDraw(barr[i].b1.VAO, s1, t, deltatime);
-				barr[i].BulletCollision(arr);
+			if (!barr[i]->Impact) {
+				barr[i]->BulletDraw(barr[i]->b1.VAO, s1, t, deltatime);
+				barr[i]->BulletCollision(arr);
 			}
-			if (barr[i].Impact) {
+			if (barr[i]->Impact) {
 				barr.erase(barr.begin() + i);
 			}
 		}	
@@ -370,6 +380,10 @@ void Game::Run() {
 			
 		}
 		
+		// Render Text
+
+
+
 
 		glfwSwapBuffers(window);
 		glfwPollEvents();

@@ -7,7 +7,6 @@
 #include "Shader.h"
 
 
-
 int main(void)
 {
 	Game engine;

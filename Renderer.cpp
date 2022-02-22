@@ -6,6 +6,7 @@ Renderer::~Renderer() {}
 
 void Renderer::Draw(GLuint& VAO, Shader ref, GLuint &t1, glm::vec3 &pos, GLfloat angle, glm::vec3 &axis) {
 	/*glUseProgram(ShaderProgram);*/
+	glBindTexture(GL_TEXTURE_2D, rec.texture);
 	glBindVertexArray(VAO);	
 
 	glm::mat4 model(1.0f);

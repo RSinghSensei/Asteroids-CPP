@@ -1,7 +1,15 @@
 #version 330 core
 
 out vec4 FragColor;
+in vec3 ourColor;
+in vec2 ourTexCoords;
 
+uniform sampler2D ourTexture;
 void main(){
-	FragColor = vec4(0.1f, 0.5f, 1.0f, 1.0f);
+	vec4 tempTexColor = texture(ourTexture, ourTexCoords);
+	if (tempTexColor.a < 0.1)
+	{
+		discard;
+	}
+	FragColor = tempTexColor;
 }
