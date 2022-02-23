@@ -4,10 +4,11 @@
 #include "../Shader/ShaderStream.h"
 #include <glm-0.9.9.8/glm/gtx/string_cast.hpp>
 #include <vector>
-#include <Windows.h>
 #include "../Renderer/Renderer.h"
 #include "../Asteroids/Asteroids.h"
 #include "../Bullet/Bullet.h"
+#include "../SpaceObjects/Planet.h"
+#include <Irrklang/irrKlang.h>
 
 Game::Game() {}
 Game::~Game(){}
@@ -104,8 +105,7 @@ void Game::Run() {
 	std::cout << glGetString(GL_VERSION) << std::endl;
 
 	// ScreenText Properties Initialization
-	
-
+	glEnable(GL_DEPTH_TEST);
 
 	// Screen Text Shader
 	/*std::string screenVS = ShaderStream::ReadShaderSource("screenTextShader.vert");
@@ -148,7 +148,10 @@ void Game::Run() {
 
 	GLfloat refangle = angle;
 
-	// Player Vertices
+	// Planet in Background
+
+	Planet bgPlanet(glm::vec3(-450.0f, 250.0f, 1.0f));
+
 
 	//Bullet Characteristics
 	std::vector<Bullet*>barr{};
@@ -160,9 +163,11 @@ void Game::Run() {
 
 	Asteroids* Ast1 = new Asteroids;
 	Asteroids* Ast2 = new Asteroids;
+	Asteroids* Ast3 = new Asteroids;
+	Asteroids* Ast4 = new Asteroids;
 	/*ast3, ast4;*/
 
-	std::vector<Asteroids*>arr{ Ast1, Ast2 };
+	std::vector<Asteroids*>arr{ Ast1, Ast2, Ast3, Ast4 };
 
 	//Create 28 Asteroid Objects initially
 	//When impact, 
@@ -182,13 +187,17 @@ void Game::Run() {
 	/*glm::vec3 a1pos = glm::vec3(10.0f, 10.0f, 1.0f);
 	glm::vec3 a1size = glm::vec3(10.0f, 10.0f, 1.0f);*/
 
-	//PlaySound("..\\..\\..\\..\\Downloads\\breakout.wav", NULL, SND_ASYNC | SND_FILENAME | SND_LOOP);
+	// IrrKlang
+	irrklang::ISoundEngine* SoundEngine = irrklang::createIrrKlangDevice();
+	SoundEngine->play2D(".\\Assets\\breakout.wav", true);
+
+	//PlaySound(".\\Assets\\breakout.wav", NULL, SND_ASYNC | SND_FILENAME | SND_LOOP);
 
 	
 	while (!glfwWindowShouldClose(window)) {
 		if (glfwGetCurrentContext() == NULL) { std::cout << "Window out of scope" << std::endl; }
 
-		glClear(GL_COLOR_BUFFER_BIT);
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 		//Delta time
 		GLfloat currenttime = glfwGetTime();
@@ -262,6 +271,8 @@ void Game::Run() {
 		}
 
 		if (glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_RELEASE && bulletstat == false) {
+			SoundEngine->play2D(".\\Assets\\BulletSound.wav", false);
+			//PlaySound(".\\Assets\\BulletSound.wav", NULL, SND_ASYNC | SND_FILENAME);
 			bulletstat = true;
 		}
 
@@ -381,7 +392,7 @@ void Game::Run() {
 		}
 		
 		// Render Text
-
+		bgPlanet.draw(s1, t, deltatime);
 
 
 

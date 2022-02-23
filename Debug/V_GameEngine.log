@@ -1,1 +1,10 @@
-﻿  V_GameEngine.vcxproj -> C:\Users\14168\source\repos\V_GameEngine\Debug\V_GameEngine.exe
+﻿  game.cpp
+C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Asteroids\Asteroids.h(21,30): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Asteroids\Asteroids.h(22,30): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Asteroids\Asteroids.h(25,34): warning C4244: 'initializing': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Game\game.cpp(19,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Game\game.cpp(203,23): warning C4244: 'initializing': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Game\game.cpp(324,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Game\game.cpp(372,21): warning C4018: '<': signed/unsigned mismatch
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+  V_GameEngine.vcxproj -> C:\Users\14168\source\repos\V_GameEngine\Debug\V_GameEngine.exe

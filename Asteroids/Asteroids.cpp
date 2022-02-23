@@ -25,12 +25,12 @@ void Asteroids::AsteroidDraw(GLuint& VAO, Shader ref, GLuint& t1, GLfloat dt) {
 void Asteroids::AsteroidCollisionCheck() {
 	// Collision check
 
-	if (this->astpos.x + (this->astsize.x / 2) <= -800.0f || this->astpos.x - (this->astsize.x / 2) >= 800.0f) {
-		this->astpos.x *= -1;
+	if (this->astpos.x + (this->astsize.x / 2) <= -805.0f || this->astpos.x - (this->astsize.x / 2) >= 805.0f) {
+		this->astpos.x *= -0.9f;
 		std::cout << "Buffer Zone" << std::endl;
 	}
-	if (this->astpos.y + (this->astsize.y / 2) <= -600.0f || this->astpos.y - (this->astsize.y / 2) >= 600.0f) {
-		this->astpos.y *= -1;
+	if (this->astpos.y + (this->astsize.y / 2) <= -605.0f || this->astpos.y - (this->astsize.y / 2) >= 605.0f) {
+		this->astpos.y *= -0.9f;
 		std::cout << "Buffer Zone" << std::endl;
 	}
 

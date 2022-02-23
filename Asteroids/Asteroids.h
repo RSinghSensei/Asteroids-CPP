@@ -18,11 +18,11 @@ public:
 	glm::vec3 astpos = glm::vec3(600.0f, 100.0f, 1.0f);
 	glm::vec3 astsize = glm::vec3(200.0f, 200.0f, 1.0f);
 		
-	float x_speed = rand() % 10 + 50;
-	float y_speed = rand() % 10 + 50;
+	float x_speed = rand() % 10 + 200;
+	float y_speed = rand() % 10 + 200;
 	 
 
-	GLfloat astangle = rand() % 25 + 100;
+	GLfloat astangle = rand() % 100 + 100;
 
 	bool Hit = false;
 

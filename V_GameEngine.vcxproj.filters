@@ -65,6 +65,9 @@
     <ClInclude Include="Bullet\Bullet.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="SpaceObjects\Planet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="Shader\sample.txt">
