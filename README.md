@@ -2,7 +2,19 @@
 
 Asteroids made in **C++** using **OpenGL** and **GLFW**. 
 
-## Version 0.3 - LATEST
+## **Version 1.0 - LASTEST**
+
+- Audio
+- Textures
+- More asteroids?
+- SAT collision present, although I'm thinking kd-trees
+- Also, assets are not my own
+- Enable sound for demo below ;)
+
+https://user-images.githubusercontent.com/77813397/155246217-76ab8e52-6ece-46a1-a4d8-694ad28b0298.mp4 
+
+
+## Version 0.3
 Current Features Implemented:
 - SAT Collision implemented
 
@@ -14,7 +26,9 @@ Current Features Implemented:
 - Asteroids generate 2 new Asteroid objects with halved size up to 2 times 
 - Current state video available 
 
-https://user-images.githubusercontent.com/77813397/145146638-c1daca43-6230-4676-b517-54fdcf8e78ae.mp4
+
+https://user-images.githubusercontent.com/77813397/155246284-81cbf8e4-6b26-4b30-b0c1-92716c1d40d9.mp4
+
 
 
 
