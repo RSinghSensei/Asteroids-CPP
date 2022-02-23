@@ -210,7 +210,7 @@ void Game::Run() {
 	// IrrKlang
 	irrklang::ISoundEngine* SoundEngine = irrklang::createIrrKlangDevice();
 	irrklang::ISoundSource* bgMusic = SoundEngine->addSoundSourceFromFile(".\\Assets\\breakout.wav");
-	irrklang::ISoundSource* shipExplosionMusic = SoundEngine->addSoundSourceFromFile("Assets\\ShipExplosion.mp3");
+	irrklang::ISoundSource* shipExplosionMusic = SoundEngine->addSoundSourceFromFile(".\\Assets\\ShipExplosion.mp3");
 	irrklang::ISoundSource* shipEngineMusic = SoundEngine->addSoundSourceFromFile(".\\Assets\\shipEngineSound.wav");
 	irrklang::ISound* m_bgMusic = SoundEngine->play2D(bgMusic, true, false, true);
 	//irrklang::ISound* m_shipEngineMusic = SoundEngine->play2D(shipEngineMusic, false, false, true);
