@@ -68,6 +68,9 @@
     <ClInclude Include="SpaceObjects\Planet.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ShipLives\ShipLives.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="Shader\sample.txt">
@@ -87,5 +90,8 @@
     <None Include="Shader\screenTextShader.frag">
       <Filter>Source Files</Filter>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="Assets\ShipExplosion.mp3" />
   </ItemGroup>
 </Project>

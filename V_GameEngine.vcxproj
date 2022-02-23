@@ -167,6 +167,7 @@
     <ClInclude Include="Shader\Shader.h" />
     <ClInclude Include="Shader\ShaderStream.h" />
     <ClInclude Include="Shapes\Shapes.h" />
+    <ClInclude Include="ShipLives\ShipLives.h" />
     <ClInclude Include="SpaceObjects\Planet.h" />
   </ItemGroup>
   <ItemGroup>
@@ -177,6 +178,9 @@
     <None Include="Shader\screenTextShader.vert" />
     <None Include="Shader\shader.frag" />
     <None Include="Shader\shader.vert" />
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="Assets\ShipExplosion.mp3" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />

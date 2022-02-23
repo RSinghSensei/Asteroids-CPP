@@ -8,7 +8,9 @@
 #include "../Asteroids/Asteroids.h"
 #include "../Bullet/Bullet.h"
 #include "../SpaceObjects/Planet.h"
+#include "../ShipLives/ShipLives.h"
 #include <Irrklang/irrKlang.h>
+#include <ctime>
 
 Game::Game() {}
 Game::~Game(){}
@@ -137,6 +139,21 @@ void Game::Run() {
 	GLfloat deltatime = 0.0f;
 	GLfloat lastframe = 0.0f;
 
+	// Ship Lives Render
+	std::vector<ShipLives>shiphearts;
+	float shiphx = 800.0f, shiphy = 500.0f;
+	ShipLives heart1(glm::vec3{ shiphx-=60.0f, shiphy, 0.0f });
+	ShipLives heart2(glm::vec3{ shiphx-=60.0f, shiphy, 0.0f });
+	ShipLives heart3(glm::vec3{ shiphx-=60.0f, shiphy, 0.0f });
+	ShipLives heart4(glm::vec3{ shiphx-=60.0f, shiphy, 0.0f });
+
+	shiphearts.push_back(heart1);
+	shiphearts.push_back(heart2);
+	shiphearts.push_back(heart3);
+	shiphearts.push_back(heart4);
+
+	int livesLeft = shiphearts.size();
+
 	// Player Characteristics
 
 	glm::vec3 pos = glm::vec3(0.0f, 1.0f, 1.0f);
@@ -145,8 +162,11 @@ void Game::Run() {
 	GLfloat velocity = 0.0f;
 	GLfloat acceleration = 200.0f;
 	bool Engine = false;
+	bool respawnInvincibility = false;
 
 	GLfloat refangle = angle;
+
+	std::clock_t startTime;
 
 	// Planet in Background
 
@@ -189,7 +209,12 @@ void Game::Run() {
 
 	// IrrKlang
 	irrklang::ISoundEngine* SoundEngine = irrklang::createIrrKlangDevice();
-	SoundEngine->play2D(".\\Assets\\breakout.wav", true);
+	irrklang::ISoundSource* bgMusic = SoundEngine->addSoundSourceFromFile(".\\Assets\\breakout.wav");
+	irrklang::ISoundSource* shipExplosionMusic = SoundEngine->addSoundSourceFromFile("Assets\\ShipExplosion.mp3");
+	irrklang::ISoundSource* shipEngineMusic = SoundEngine->addSoundSourceFromFile(".\\Assets\\shipEngineSound.wav");
+	irrklang::ISound* m_bgMusic = SoundEngine->play2D(bgMusic, true, false, true);
+	//irrklang::ISound* m_shipEngineMusic = SoundEngine->play2D(shipEngineMusic, false, false, true);
+	
 
 	//PlaySound(".\\Assets\\breakout.wav", NULL, SND_ASYNC | SND_FILENAME | SND_LOOP);
 
@@ -211,6 +236,7 @@ void Game::Run() {
 		if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS) {
 			/*pos.y += (velocity * deltatime * cos(angle));
 			pos.x += (velocity * deltatime * -sin(angle));*/
+
 			if (velocity < 800.0f) {
 				velocity += (acceleration * deltatime);
 			}					
@@ -327,6 +353,7 @@ void Game::Run() {
 				barr[i]->BulletCollision(arr);
 			}
 			if (barr[i]->Impact) {
+				SoundEngine->play2D(".\\Assets\\BulletAstImpact.wav", false);
 				barr.erase(barr.begin() + i);
 			}
 		}	
@@ -387,10 +414,34 @@ void Game::Run() {
 			// if firstOverlap is false, break procedure
 		
 
-			if (SeperatingAxisCollision(player_vert_coords, p_ast_collision, normal1, normal2, normal3, normal4)) { std::cout << "Collision" << std::endl; }
+			if (SeperatingAxisCollision(player_vert_coords, p_ast_collision, normal1, normal2, normal3, normal4) && !respawnInvincibility) 
+			{ 
+				livesLeft -= 1;
+				SoundEngine->play2D(shipExplosionMusic, false);
+				m_bgMusic->setIsPaused();
+				m_bgMusic->setPlayPosition(0);
+				pos = glm::vec3(0.0f, 1.0f, 1.0f);
+				axis = glm::vec3(0.0f, 0.0f, 1.0f);
+				angle = 0.0f;
+				velocity = 0.0f;
+				respawnInvincibility = true;
+				std::cout << "Collision" << std::endl;
+				startTime = std::clock();
+			}
 			
 		}
+
+		if (respawnInvincibility)
+		{
+			if (((std::clock() - startTime) / ((double)CLOCKS_PER_SEC)) >= 2.5) { respawnInvincibility = false; m_bgMusic->setIsPaused(false); }
+		}
 		
+		// Render Hearts
+		for (int h = 0; h < livesLeft; h++)
+		{
+			shiphearts[h].draw(s1, t, deltatime);
+		}
+
 		// Render Text
 		bgPlanet.draw(s1, t, deltatime);
 
