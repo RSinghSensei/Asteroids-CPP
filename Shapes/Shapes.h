@@ -3,47 +3,25 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
-//class Shape{
-//public:
-//	Shape();
-//	~Shape();
-//
-//	//GLuint bufferint();
-//	float quad_verts[3 * 4] = 
-//{
-//	 0.5f,  0.5f, 0.0f,  // top right
-//	 0.5f, -0.5f, 0.0f,  // bottom right
-//	-0.5f, -0.5f, 0.0f,  // bottom left
-//	-0.5f,  0.5f, 0.0f   // top left 
-//	};
-//
-//	float colorArr[4 * 3] =
-//	{
-//		0.8f, 0.8f, 0.8f,
-//		0.8f, 0.8f, 0.8f,
-//		0.8f, 0.8f, 0.8f,
-//		0.8f, 0.8f, 0.8f
-//	};
-//
-//	float altcolorArr[4 * 3] =
-//	{
-//		0.1f, 0.5f, 1.0f,
-//		0.1f, 0.5f, 1.0f,
-//		0.1f, 0.5f, 1.0f,
-//		0.1f, 0.5f, 1.0f
-//	};
-//
-//	unsigned int quad_indices[3 * 2] = 
-//	{
-//	  0, 1, 3,
-//	  1, 2, 3
-//	};
-//	
-//	GLuint VAO;
-//
-//};
+class Shape{
+public:
+	Shape(){}	
+	virtual ~Shape() {};
 
-class AsteroidShape
+	GLuint testsub(const char* imgSource);
+	GLuint getVAO() const { return VAO; }
+	GLuint getTexture() const { return texture; }
+protected:
+	GLuint VAO;
+	GLuint texture;
+	unsigned int quad_indices[3 * 2] =
+	{
+	  0, 1, 3,
+	  1, 2, 3
+	};
+};
+
+class AsteroidShape : public Shape
 {
 public:
 	AsteroidShape();
@@ -57,18 +35,18 @@ public:
 		-0.5f,  0.5f, 0.0f, 0.8f, 0.8f, 0.8f, 0.0f, 1.0f  // top left 
 	};
 
-	unsigned int quad_indices[3 * 2] =
+	/*unsigned int quad_indices[3 * 2] =
 	{
 	  0, 1, 3,
 	  1, 2, 3
 	};
 
 	GLuint VAO;
-	GLuint texture;
+	GLuint texture;*/
 
 };
 
-class ShipShape
+class ShipShape : public Shape
 {
 public:
 	ShipShape();
@@ -82,18 +60,18 @@ public:
 		-0.5f,  0.5f, 0.0f, 0.8f, 0.8f, 0.8f, 0.0f, 1.0f  // top left 
 	};
 
-	unsigned int quad_indices[3 * 2] =
-	{
-	  0, 1, 3,
-	  1, 2, 3
-	};
+	//unsigned int quad_indices[3 * 2] =
+	//{
+	//  0, 1, 3,
+	//  1, 2, 3
+	//};
 
-	GLuint VAO;
-	GLuint texture;
+	//GLuint VAO;
+	//GLuint texture;
 
 };
 
-class BulletShape
+class BulletShape : public Shape
 {
 public:
 	BulletShape();
@@ -107,18 +85,18 @@ public:
 		-0.5f,  0.5f, 0.0f, 0.8f, 0.8f, 0.8f, 0.0f, 1.0f  // top left 
 	};
 
-	unsigned int quad_indices[3 * 2] =
-	{
-	  0, 1, 3,
-	  1, 2, 3
-	};
+	//unsigned int quad_indices[3 * 2] =
+	//{
+	//  0, 1, 3,
+	//  1, 2, 3
+	//};
 
-	GLuint VAO;
-	GLuint texture;
+	//GLuint VAO;
+	//GLuint texture;
 
 };
 
-class StarShape
+class StarShape : public Shape
 {
 public:
 	StarShape();
@@ -132,18 +110,18 @@ public:
 		-0.5f,  0.5f, -1.0f, 0.8f, 0.8f, 0.8f, 0.0f, 1.0f  // top left 
 	};
 
-	unsigned int quad_indices[3 * 2] =
-	{
-	  0, 1, 3,
-	  1, 2, 3
-	};
+	//unsigned int quad_indices[3 * 2] =
+	//{
+	//  0, 1, 3,
+	//  1, 2, 3
+	//};
 
-	GLuint VAO;
-	GLuint texture;
+	//GLuint VAO;
+	//GLuint texture;
 
 };
 
-class ShipLifeShape
+class ShipLifeShape : public Shape
 {
 public:
 	ShipLifeShape();
@@ -157,13 +135,88 @@ public:
 		-0.5f,  0.5f, 1.0f, 0.8f, 0.8f, 0.8f, 0.0f, 1.0f  // top left 
 	};
 
-	unsigned int quad_indices[3 * 2] =
+	//unsigned int quad_indices[3 * 2] =
+	//{
+	//  0, 1, 3,
+	//  1, 2, 3
+	//};
+
+	//GLuint VAO;
+	//GLuint texture;
+
+};
+
+class enemyShape : public Shape
+{
+public:
+	enemyShape();
+	~enemyShape();
+
+	float quad_verts[8 * 4] =
 	{
-	  0, 1, 3,
-	  1, 2, 3
+		 0.5f,  0.5f, 1.0f, 0.8f, 0.8f, 0.8f, 1.0f, 1.0f, // top right
+		 0.5f, -0.5f, 1.0f, 0.8f, 0.8f, 0.8f, 1.0f, 0.0f, // bottom right
+		-0.5f, -0.5f, 1.0f, 0.8f, 0.8f, 0.8f, 0.0f, 0.0f, // bottom left
+		-0.5f,  0.5f, 1.0f, 0.8f, 0.8f, 0.8f, 0.0f, 1.0f  // top left 
 	};
 
-	GLuint VAO;
-	GLuint texture;
+	//unsigned int quad_indices[3 * 2] =
+	//{
+	//  0, 1, 3,
+	//  1, 2, 3
+	//};
+
+	//GLuint VAO;
+	//GLuint texture;
+
+};
+
+class endGameScreen : public Shape
+{
+public:
+	endGameScreen();
+	~endGameScreen();
+
+	float quad_verts[8 * 4] =
+	{
+		 0.5f,  0.5f, 1.0f, 0.8f, 0.8f, 0.8f, 1.0f, 1.0f, // top right
+		 0.5f, -0.5f, 1.0f, 0.8f, 0.8f, 0.8f, 1.0f, 0.0f, // bottom right
+		-0.5f, -0.5f, 1.0f, 0.8f, 0.8f, 0.8f, 0.0f, 0.0f, // bottom left
+		-0.5f,  0.5f, 1.0f, 0.8f, 0.8f, 0.8f, 0.0f, 1.0f  // top left 
+	};
+
+	//unsigned int quad_indices[3 * 2] =
+	//{
+	//  0, 1, 3,
+	//  1, 2, 3
+	//};
+
+	//GLuint VAO;
+	//GLuint texture;
+
+};
+
+class menuScreenImage : public Shape
+{
+public:
+	menuScreenImage();
+	~menuScreenImage();
+
+	float quad_verts[8 * 4] =
+	{
+		 0.5f,  0.5f, 1.0f, 0.8f, 0.8f, 0.8f, 1.0f, 1.0f, // top right
+		 0.5f, -0.5f, 1.0f, 0.8f, 0.8f, 0.8f, 1.0f, 0.0f, // bottom right
+		-0.5f, -0.5f, 1.0f, 0.8f, 0.8f, 0.8f, 0.0f, 0.0f, // bottom left
+		-0.5f,  0.5f, 1.0f, 0.8f, 0.8f, 0.8f, 0.0f, 1.0f  // top left 
+	};
+
+	//unsigned int quad_indices[3 * 2] =
+	//{
+	//  0, 1, 3,
+	//  1, 2, 3
+	//};
+
+	//GLuint VAO;
+	//GLuint texture;
 
 };

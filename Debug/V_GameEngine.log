@@ -1,9 +1,17 @@
-﻿  game.cpp
+﻿  GameState.cpp
 C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Asteroids\Asteroids.h(21,30): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
 C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Asteroids\Asteroids.h(22,30): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
 C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Asteroids\Asteroids.h(25,34): warning C4244: 'initializing': conversion from 'int' to 'GLfloat', possible loss of data
-C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Game\game.cpp(21,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Game\game.cpp(228,23): warning C4244: 'initializing': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Game\game.cpp(350,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Game\game.cpp(399,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Enemy\Enemy.h(20,34): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Enemy\Enemy.h(21,30): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Enemy\Enemy.h(22,30): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Game\GameState.cpp(208,56): warning C4244: '-=': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Game\GameState.cpp(312,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Game\GameState.cpp(369,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Game\GameState.cpp(423,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Game\GameState.cpp(479,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Game\GameState.cpp(485,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Game\GameState.cpp(492,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Game\GameState.cpp(497,20): warning C4018: '<': signed/unsigned mismatch
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
   V_GameEngine.vcxproj -> C:\Users\14168\source\repos\V_GameEngine\Debug\V_GameEngine.exe

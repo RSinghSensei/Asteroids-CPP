@@ -2,9 +2,9 @@
 
 
 
-void Asteroids::AsteroidDraw(GLuint& VAO, Shader ref, GLuint& t1, GLfloat dt) {
-	glBindTexture(GL_TEXTURE_2D, a1.texture);
-	glBindVertexArray(VAO);
+void Asteroids::AsteroidDraw(Shader ref, GLuint& t1, GLfloat dt) {
+	glBindTexture(GL_TEXTURE_2D, a1.getTexture());
+	glBindVertexArray(a1.getVAO());
 	glm::mat4 model(1.0f);
 
 	model = glm::translate(model, this->astpos);

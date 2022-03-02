@@ -8,9 +8,9 @@ Bullet::Bullet(const glm::vec3 playerpos, const GLfloat angle) {
 	this->bulangle = angle;
 }
 
-void Bullet::BulletDraw(GLuint& VAO, Shader ref, GLuint& t1, GLfloat dt) {
-	glBindTexture(GL_TEXTURE_2D, b1.texture);
-	glBindVertexArray(VAO); 
+void Bullet::BulletDraw(Shader ref, GLuint& t1, GLfloat dt) {
+	glBindTexture(GL_TEXTURE_2D, b1.getTexture());
+	glBindVertexArray(b1.getVAO()); 
 
 	glm::mat4 model(1.0f);
 
@@ -69,13 +69,8 @@ void Bullet::BulletCollision(std::vector<Asteroids*>& astcheck) {
 			delete astcheck[i];
 			astcheck.erase(astcheck.begin() + i);
 		}
-
-
-		/*if (this->bulpos.x < astcheck[i]->astpos.x + astcheck[i]->astsize.x && astcheck[i]->astpos.x < this->bulpos.x + this->Bulletsize.x){}
-		if (this->bulpos.x < astcheck[i]->astpos.x + astcheck[i]->astsize.x && astcheck[i]->astpos.x < this->bulpos.x + this->Bulletsize.x){}*/
-		
-		//if (xcol && ycol) { std::cout << "Bullet Ast collision" << std::endl; }
 	}
+
 }
 
 		/*bool xcol, ycol;

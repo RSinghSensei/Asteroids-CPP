@@ -152,23 +152,35 @@
     <ClCompile Include="..\..\Triangle\Triangle\glad.c" />
     <ClCompile Include="Asteroids\Asteroids.cpp" />
     <ClCompile Include="Bullet\Bullet.cpp" />
+    <ClCompile Include="Enemy\Enemy.cpp" />
     <ClCompile Include="Game\game.cpp" />
+    <ClCompile Include="Game\GameState.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Physics\Physics.cpp" />
     <ClCompile Include="Renderer\Renderer.cpp" />
     <ClCompile Include="Shader\Shader.cpp" />
     <ClCompile Include="Shapes\Shape.cpp" />
+    <ClCompile Include="ShipLives\ShipLives.cpp" />
+    <ClCompile Include="SpaceObjects\Planet.cpp" />
+    <ClCompile Include="StateScreens\endGame.cpp" />
+    <ClCompile Include="StateScreens\menuGame.cpp" />
     <ClCompile Include="stb.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Asteroids\Asteroids.h" />
     <ClInclude Include="Bullet\Bullet.h" />
+    <ClInclude Include="Enemy\Enemy.h" />
     <ClInclude Include="Game\game.h" />
+    <ClInclude Include="Game\GameState.h" />
     <ClInclude Include="Renderer\Renderer.h" />
     <ClInclude Include="Shader\Shader.h" />
     <ClInclude Include="Shader\ShaderStream.h" />
     <ClInclude Include="Shapes\Shapes.h" />
     <ClInclude Include="ShipLives\ShipLives.h" />
     <ClInclude Include="SpaceObjects\Planet.h" />
+    <ClInclude Include="StateScreens\endGame.h" />
+    <ClInclude Include="Physics\Physics.h" />
+    <ClInclude Include="StateScreens\menuGame.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Shader\sample.txt" />
@@ -178,9 +190,6 @@
     <None Include="Shader\screenTextShader.vert" />
     <None Include="Shader\shader.frag" />
     <None Include="Shader\shader.vert" />
-  </ItemGroup>
-  <ItemGroup>
-    <Media Include="Assets\ShipExplosion.mp3" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />

@@ -3,8 +3,6 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include "Game/game.h"
-#include "Shader/ShaderStream.h"
-#include "Shader/Shader.h"
 
 
 int main(void)
