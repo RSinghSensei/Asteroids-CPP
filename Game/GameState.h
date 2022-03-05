@@ -59,8 +59,9 @@ private:
 	bool isgameover = false;
 
 	std::vector<Enemy*>enemyAI;
+	std::vector<Bullet*>enemybarr;
 	std::clock_t enemyTime{};
-	bool enemyActive = false, oneEnemy = true;
+	bool enemyActive = false, oneEnemy = true, enemyinRange = false;
 
 	Planet* bgPlanet = nullptr;
 

@@ -52,7 +52,7 @@ playState::playState(irrklang::ISoundEngine* SoundEngine)
 	if (m_bgMusic == nullptr) { m_bgMusic = SoundEngine->play2D(bgMusic, true, false, true); }
 	assert(m_bgMusic != nullptr);
 	endgame = new endGame;
-	enemyTime = std::clock();
+	//enemyTime = std::clock();
 
 }
 
@@ -237,11 +237,21 @@ void playState::stateRun(GLFWwindow* window, float deltatime, irrklang::ISoundEn
 		barr.push_back(b1);
 		SoundEngine->play2D(".\\Assets\\BulletSound.wav", false);
 		bulletstat = false;
+
+		if (enemyinRange)
+		{
+			glm::vec3 diffVec = r1->pos - enemyAI[0]->enemyPos;
+			GLfloat enemyAngle = atanf(diffVec.y / diffVec.x);
+			Bullet* enemyBullet = new Bullet(enemyAI[0]->enemyPos, enemyAngle);
+			enemybarr.push_back(enemyBullet);
+		}
+
 		// Get player coordinates every time we shoot
 		// Something else also prints here, I believe bullet hit debug 
 		// Declare first
 
 		// Transferred to update constantly, doesn't make sense to update it just once
+
 
 		/*std::cout << "Player Vertices: " << std::endl;
 
@@ -424,6 +434,7 @@ void playState::stateRun(GLFWwindow* window, float deltatime, irrklang::ISoundEn
 		{
 			enemyAI[i]->draw(s1, t, deltatime);
 			if (enemyAI[i]->arrival == false) { enemyAI[i]->checkArrival(); continue; }
+			enemyinRange = true;
 			enemyAI[i]->collisionCheck();
 			if (SeperatingAxisCollision(player_vert_coords, enemyAI[i]->vertexPos(), normal1, normal2, normal3, normal4) && !r1->respawnInvincibility)
 			{
@@ -432,9 +443,23 @@ void playState::stateRun(GLFWwindow* window, float deltatime, irrklang::ISoundEn
 				delete enemyAI[i];
 				enemyAI.erase(enemyAI.begin() + i);
 				oneEnemy = true;
+				enemyinRange = false;
 				break;
 			}
+			for (int j = 0; j < enemybarr.size(); j++)
+			{
+				enemybarr[j]->BulletDraw(s1, t, deltatime); 
+				enemybarr[j]->BulletCollision(arr);
+				if (enemybarr[j]->isImpact()) { enemybarr.erase(enemybarr.begin() + j); }
+				else if (std::fabs(enemybarr[i]->getogpos().x - enemybarr[i]->getcurrentPos().x) >= 800.0f || std::fabs(enemybarr[i]->getogpos().y - enemybarr[i]->getcurrentPos().y) >= 800.0f)
+				{
+					delete enemybarr[i];
+					enemybarr.erase(enemybarr.begin() + i);
+				}
+
+			}
 		}
+
 
 	}
 
@@ -456,17 +481,17 @@ void playState::stateRun(GLFWwindow* window, float deltatime, irrklang::ISoundEn
 
 	if (livesLeft <= 0 && !isgameover)
 	{
+		std::cout << "game over" << std::endl;
 		// Render game over overlay
 		isgameover = true;
 		SoundEngine->play2D(gameoverMusic, false);
-		m_bgMusic->drop();
+		std::cout << "is games over" << std::endl;
 	}
 
 	if (isgameover)
 	{
 		r1->pos.z = -10.0f;
 		endgame->draw(s1, t, deltatime);
-		resetGame();
 	
 	}
 	// Render Text
@@ -522,6 +547,7 @@ void playState::resetGame()
 
 	r1->Reset();
 
+
 	enemyActive = false;
 	oneEnemy = true;
 	isgameover = false;
@@ -529,6 +555,7 @@ void playState::resetGame()
 	stageTwo = true;
 	stageThree = false;
 	bulletstat = true;
+	enemyinRange = false;
 
 	enemyTime = std::clock();
 }
