@@ -4,7 +4,7 @@
 #include <GLFW/glfw3.h>
 #include "../Shader/Shader.h"
 #include "../Shapes/Shapes.h"
-
+#include "../ResourceManager/ResourceManager.h"
 class Renderer {
 public:
 	Renderer();

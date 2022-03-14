@@ -2,7 +2,8 @@
 
 void endGame::draw(Shader ref, GLuint& t1, GLfloat dt)
 {
-	glBindTexture(GL_TEXTURE_2D, endState.getTexture());
+	//glBindTexture(GL_TEXTURE_2D, endState.getTexture());
+	glBindTexture(GL_TEXTURE_2D, ResourceManager::getInstance()->getTexture("gameover"));
 	glBindVertexArray(endState.getVAO());
 	glm::mat4 model(1.0f);
 

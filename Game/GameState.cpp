@@ -2,9 +2,22 @@
 
 playState::playState(irrklang::ISoundEngine* SoundEngine)
 {
+	playSoundEngine = SoundEngine;
+
+	// Resource Manager
+	
+	ResourceManager::getInstance()->loadTexture("asteroids", ".\\Assets\\Asteroid.png");
+	ResourceManager::getInstance()->loadTexture("ship", ".\\Assets\\pixelSpaceShip.png");
+	ResourceManager::getInstance()->loadTexture("bullet", ".\\Assets\\fireballbullet1.png");
+	ResourceManager::getInstance()->loadTexture("planet", ".\\Assets\\planet.png");
+	ResourceManager::getInstance()->loadTexture("enemyship", ".\\Assets\\enemyAI.png");
+	ResourceManager::getInstance()->loadTexture("gameover", ".\\Assets\\gameoversprite.png");
+	ResourceManager::getInstance()->loadTexture("menu", ".\\Assets\\MenuScreen.png");
+
+
+	// Ship Renderer
 	r1 = new Renderer;
 	assert(r1 != nullptr);
-	playSoundEngine = SoundEngine;
 
 	// Ship Lives Render
 	float shiphx = 800.0f, shiphy = 500.0f;
@@ -560,7 +573,7 @@ void playState::resetGame()
 	enemyTime = std::clock();
 }
 
-menuState::menuState(irrklang::ISoundEngine* SoundEngine, playState &ps): menuMusic(SoundEngine->addSoundSourceFromFile(".\\Assets\\menuMusic.mp3")) ,m_playState(ps)
+menuState::menuState(irrklang::ISoundEngine* SoundEngine, ecsPlayState &ps): menuMusic(SoundEngine->addSoundSourceFromFile(".\\Assets\\menuMusic.mp3")) ,m_playState(ps)
 {
 	introScreen = new menuGame;
 }

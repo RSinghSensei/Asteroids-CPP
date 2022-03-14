@@ -5,7 +5,7 @@
 #include "Game/game.h"
 
 
-int main(void)
+int main()
 {
 	Game engine;
 	//Shader s1;	

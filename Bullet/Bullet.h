@@ -1,6 +1,7 @@
 #pragma once
 #include "../Shapes/Shapes.h"
 #include "../Shader/Shader.h"
+#include "../ResourceManager/ResourceManager.h"
 #include <vector>
 #include "../Asteroids/Asteroids.h"
 #include <glm-0.9.9.8/glm/glm.hpp>

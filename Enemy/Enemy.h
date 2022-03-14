@@ -2,6 +2,7 @@
 #include <glm-0.9.9.8/glm/glm.hpp>
 #include "../Shapes/Shapes.h"
 #include "../Shader/Shader.h"
+#include "../ResourceManager/ResourceManager.h"
 #include <vector>
 
 struct Enemy

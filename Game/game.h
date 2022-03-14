@@ -11,7 +11,6 @@
 #include "GameState.h"
 
 
-
 class Game {
 public:
 	Game();
@@ -25,11 +24,10 @@ private:
 	GLfloat deltatime{};
 	GLfloat lastframe{};
 	Shader s1;
-
+	
 	GLFWwindow* window = nullptr;
 	const int w_width = 800, w_length = 600;	
 	//bool menuState = true;
 	irrklang::ISoundEngine* SoundEngine = nullptr;
 	GameState* state = nullptr;
-
 };

@@ -3,7 +3,8 @@
 
 
 void Asteroids::AsteroidDraw(Shader ref, GLuint& t1, GLfloat dt) {
-	glBindTexture(GL_TEXTURE_2D, a1.getTexture());
+	/*glBindTexture(GL_TEXTURE_2D, a1.getTexture());*/
+	glBindTexture(GL_TEXTURE_2D, ResourceManager::getInstance()->getTexture("asteroids"));
 	glBindVertexArray(a1.getVAO());
 	glm::mat4 model(1.0f);
 

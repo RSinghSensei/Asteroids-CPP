@@ -1,33 +1,33 @@
 #include "Shapes.h"
-#include "stb/stb_image.h"
+//#include "stb/stb_image.h"
 
 
-GLuint Shape::testsub(const char* imgSource)
-{
-	GLuint texture;
-	glGenTextures(1, &texture);
-	glBindTexture(GL_TEXTURE_2D, texture);
-
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-	stbi_set_flip_vertically_on_load(true);
-	int width, height, nrChannels;
-	unsigned char* data = stbi_load(imgSource, &width, &height, &nrChannels, 0);
-
-	if (data)
-	{
-		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
-		glGenerateMipmap(GL_TEXTURE_2D);
-	}
-	else
-	{
-		std::cout << "Failed to load texture" << std::endl;
-	}
-	stbi_image_free(data);
-	return texture;
-}
+//GLuint Shape::testsub(const std::string& imgSource)
+//{
+//	GLuint texture;
+//	glGenTextures(1, &texture);
+//	glBindTexture(GL_TEXTURE_2D, texture);
+//
+//	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+//	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+//	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+//	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+//	//stbi_set_flip_vertically_on_load(true);
+//	/*int width, height, nrChannels;
+//	unsigned char* data = stbi_load(imgSource, &width, &height, &nrChannels, 0);*/
+//	//unsigned char* data = ResourceManager::getInstance()->getTexture(imgSource);
+//	if (data)
+//	{
+//		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, ResourceManager::getInstance()->getWidth(imgSource), ResourceManager::getInstance()->getHeight(imgSource), 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
+//		glGenerateMipmap(GL_TEXTURE_2D);
+//	}
+//	else
+//	{
+//		std::cout << "Failed to load texture " << imgSource << std::endl;
+//	}
+//	//ResourceManager::getInstance()->freeTexture(data);
+//	return texture;
+//}
 
 AsteroidShape::AsteroidShape()
 {
@@ -53,7 +53,10 @@ AsteroidShape::AsteroidShape()
 	glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * (sizeof(float)), (void*)(6 * sizeof(float)));
 	glEnableVertexAttribArray(2);
 
-	texture = testsub(".\\Assets\\Asteroid.png");
+	//texture = testsub(".\\Assets\\Asteroid.png");
+
+	//texture = testsub("asteroids");
+
 
 	glBindVertexArray(0);
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
@@ -86,7 +89,9 @@ ShipShape::ShipShape()
 	glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * (sizeof(float)), (void*)(6 * sizeof(float)));
 	glEnableVertexAttribArray(2);
 
-	texture = testsub(".\\Assets\\pixelSpaceShip.png");
+	//texture = testsub(".\\Assets\\pixelSpaceShip.png");
+	//texture = testsub("ship");
+	//std::cout << "Ship reached" << std::endl;
 
 	glBindVertexArray(0);
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
@@ -119,7 +124,7 @@ BulletShape::BulletShape()
 	glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * (sizeof(float)), (void*)(6 * sizeof(float)));
 	glEnableVertexAttribArray(2);
 
-	texture = testsub(".\\Assets\\fireballbullet1.png");
+	//texture = testsub("bullet");
 
 	glBindVertexArray(0);
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
@@ -153,7 +158,7 @@ StarShape::StarShape()
 	glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * (sizeof(float)), (void*)(6 * sizeof(float)));
 	glEnableVertexAttribArray(2);
 
-	texture = testsub(".\\Assets\\planet.png");
+	//texture = testsub("planet");
 
 	glBindVertexArray(0);
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
@@ -187,7 +192,7 @@ ShipLifeShape::ShipLifeShape()
 	glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * (sizeof(float)), (void*)(6 * sizeof(float)));
 	glEnableVertexAttribArray(2);
 
-	texture = testsub(".\\Assets\\pixelSpaceShip.png");
+	//texture = testsub("ship");
 
 	glBindVertexArray(0);
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
@@ -220,7 +225,7 @@ enemyShape::enemyShape()
 	glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * (sizeof(float)), (void*)(6 * sizeof(float)));
 	glEnableVertexAttribArray(2);
 
-	texture = testsub(".\\Assets\\enemyAI.png");
+	//texture = testsub("enemyship");
 
 	glBindVertexArray(0);
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
@@ -253,7 +258,7 @@ endGameScreen::endGameScreen()
 	glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * (sizeof(float)), (void*)(6 * sizeof(float)));
 	glEnableVertexAttribArray(2);
 
-	texture = testsub(".\\Assets\\gameoversprite.png");
+	//texture = testsub("gameover");
 
 	glBindVertexArray(0);
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
@@ -287,7 +292,7 @@ menuScreenImage::menuScreenImage()
 	glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * (sizeof(float)), (void*)(6 * sizeof(float)));
 	glEnableVertexAttribArray(2);
 
-	texture = testsub(".\\Assets\\MenuScreen.png");
+	//texture = testsub("menu");
 
 	glBindVertexArray(0);
 	glBindBuffer(GL_ARRAY_BUFFER, 0);

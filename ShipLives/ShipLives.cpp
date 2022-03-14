@@ -2,7 +2,9 @@
 
 void ShipLives::draw(Shader ref, GLuint& t1, GLfloat dt)
 {
-	glBindTexture(GL_TEXTURE_2D, slp1.getTexture());
+	//glBindTexture(GL_TEXTURE_2D, slp1.getTexture());
+	glBindTexture(GL_TEXTURE_2D, ResourceManager::getInstance()->getTexture("ship"));
+
 	glBindVertexArray(slp1.getVAO());
 	glm::mat4 model(1.0f);
 

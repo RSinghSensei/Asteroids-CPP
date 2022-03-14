@@ -6,7 +6,8 @@ Renderer::~Renderer() {}
 
 void Renderer::Draw(Shader ref, GLuint &t1/*, glm::vec3 &pos, GLfloat angle, glm::vec3 &axis*/) {
 	/*glUseProgram(ShaderProgram);*/
-	glBindTexture(GL_TEXTURE_2D, rec.getTexture());
+	//glBindTexture(GL_TEXTURE_2D, rec.getTexture());
+	glBindTexture(GL_TEXTURE_2D, ResourceManager::getInstance()->getTexture("ship"));
 	glBindVertexArray(rec.getVAO());	
 
 	glm::mat4 model(1.0f);

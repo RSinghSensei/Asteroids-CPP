@@ -8,7 +8,7 @@ public:
 	Shape(){}	
 	virtual ~Shape() {};
 
-	GLuint testsub(const char* imgSource);
+	//GLuint testsub(const std::string& imgSource);
 	GLuint getVAO() const { return VAO; }
 	GLuint getTexture() const { return texture; }
 protected:

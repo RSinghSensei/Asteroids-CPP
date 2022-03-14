@@ -2,6 +2,7 @@
 #include "../Shapes/Shapes.h"
 #include <glm-0.9.9.8/glm/glm.hpp>
 #include "../Shader/Shader.h"
+#include "../ResourceManager/ResourceManager.h"
 #include <stdlib.h>
 #include <vector>
 
