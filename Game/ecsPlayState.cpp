@@ -25,12 +25,36 @@ ecsPlayState::ecsPlayState(irrklang::ISoundEngine* SoundEngine)
 	ResourceManager::getInstance()->loadTexture("bullet", ".\\Assets\\fireballbullet1.png");
 	ResourceManager::getInstance()->loadTexture("planet", ".\\Assets\\planet.png");
 	ResourceManager::getInstance()->loadTexture("gameover", ".\\Assets\\gameoversprite.png");
-
-
+	//ResourceManager::getInstance()->loadTexture("tiles", ".\\Assets\\tileset2.png");
+	ResourceManager::getInstance()->loadTexture("greentile", ".\\Assets\\greentile.png");
+	ResourceManager::getInstance()->loadTexture("marbletile", ".\\Assets\\marbletile.png");
 	
+
+	// Tilemap Render Component Test
+	std::vector<int> tilemap{ 2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2 };
+	
+	for (int width = 0; width < 20; width++)
+	{
+		for (int height = 0; height < 10; height++)
+		{
+			int xpos = 50 * width;
+			int ypos = 50 * height;
+			auto tile = m_registry.create();
+			if (tilemap[width * 10 + height] == 1) { m_registry.emplace<TransformComponent>(tile, glm::vec3(xpos, ypos, 1.0f), glm::vec3(50.0f, 50.0f, 1.0f), 0.0f, "marbletile"); }
+			else
+			{
+				m_registry.emplace<TransformComponent>(tile, glm::vec3(xpos, ypos, 1.0f), glm::vec3(50.0f, 50.0f, 1.0f), 0.0f, "greentile");
+			}
+		}
+	}
+
+
+
 	m_registry.emplace<TransformComponent>(playerShip, glm::vec3(0.0f, 1.0f, 1.0f), glm::vec3(50.0f, 100.0f, 1.0f), 0.0f, "ship");
 	m_registry.emplace<RigidBodyComponent>(playerShip, glm::vec3(0.0f, 0.0f, 0.0f));
 	m_registry.emplace<PlayerComponent>(playerShip);
+
+
 	float xvel = rand() % 10 + 200;
 	float yvel = rand() % 10 + 200;
 	m_registry.emplace<TransformComponent>(ast1, glm::vec3(-450.0f, 250.0f, 1.0f), glm::vec3(200.0f, 200.0f, 1.0f), 35.0f, "asteroids");
@@ -139,10 +163,10 @@ GameState* ecsPlayState::transitionState()
 void ecsPlayState::stateRun(GLFWwindow* window, float deltatime, irrklang::ISoundEngine* SoundEngine, Shader s1, GLuint t) 
 {
 	inputPolling(window, m_registry, deltatime);
-	m_AABBCollision.update(m_registry, deltatime);
-	m_SATCollision.update(m_registry, deltatime, respawnInvincibility, isgameover, gameactive, shiphearts, respawnTimer, livesLeft);
-	m_respawnSystem.update(m_registry, deltatime, respawnTimer, respawnInvincibility);
-	m_gameover.update(m_registry, deltatime, isgameover, gameactive);
+	//m_AABBCollision.update(m_registry, deltatime);
+	//m_SATCollision.update(m_registry, deltatime, respawnInvincibility, isgameover, gameactive, shiphearts, respawnTimer, livesLeft);
+	//m_respawnSystem.update(m_registry, deltatime, respawnTimer, respawnInvincibility);
+	//m_gameover.update(m_registry, deltatime, isgameover, gameactive);
 	m_moveSystem.update(m_registry, deltatime);	
 	auto view = m_registry.view<TransformComponent>();
 	view.each([&](const auto& spr)

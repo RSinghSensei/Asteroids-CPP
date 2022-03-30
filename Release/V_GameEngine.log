@@ -1,52 +1,61 @@
-﻿  glad.c
-  Asteroids.cpp
-C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Asteroids\Asteroids.h(21,30): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+﻿  Asteroids.cpp
 C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Asteroids\Asteroids.h(22,30): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Asteroids\Asteroids.h(25,34): warning C4244: 'initializing': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Asteroids\Asteroids.h(23,30): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Asteroids\Asteroids.h(26,34): warning C4244: 'initializing': conversion from 'int' to 'GLfloat', possible loss of data
   Bullet.cpp
-C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Asteroids\Asteroids.h(21,30): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
 C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Asteroids\Asteroids.h(22,30): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Asteroids\Asteroids.h(25,34): warning C4244: 'initializing': conversion from 'int' to 'GLfloat', possible loss of data
-C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Bullet\Bullet.cpp(35,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Bullet\Bullet.cpp(34,7): warning C4101: 'x': unreferenced local variable
+C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Asteroids\Asteroids.h(23,30): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Asteroids\Asteroids.h(26,34): warning C4244: 'initializing': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Bullet\Bullet.cpp(36,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Bullet\Bullet.cpp(35,7): warning C4101: 'x': unreferenced local variable
   Enemy.cpp
-C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Enemy\Enemy.h(20,34): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Enemy\Enemy.h(21,30): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Enemy\Enemy.h(21,34): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
 C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Enemy\Enemy.h(22,30): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Enemy\Enemy.h(23,30): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+  ecsPlayState.cpp
+C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Asteroids\Asteroids.h(22,30): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Asteroids\Asteroids.h(23,30): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Asteroids\Asteroids.h(26,34): warning C4244: 'initializing': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Enemy\Enemy.h(21,34): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Enemy\Enemy.h(22,30): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Enemy\Enemy.h(23,30): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Game\ecsPlayState.cpp(34,13): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Game\ecsPlayState.cpp(35,13): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
   game.cpp
-C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Asteroids\Asteroids.h(21,30): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
 C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Asteroids\Asteroids.h(22,30): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Asteroids\Asteroids.h(25,34): warning C4244: 'initializing': conversion from 'int' to 'GLfloat', possible loss of data
-C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Enemy\Enemy.h(20,34): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Enemy\Enemy.h(21,30): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Asteroids\Asteroids.h(23,30): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Asteroids\Asteroids.h(26,34): warning C4244: 'initializing': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Enemy\Enemy.h(21,34): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
 C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Enemy\Enemy.h(22,30): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Game\game.cpp(172,23): warning C4244: 'initializing': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Enemy\Enemy.h(23,30): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Game\game.cpp(66,23): warning C4244: 'initializing': conversion from 'double' to 'GLfloat', possible loss of data
   GameState.cpp
-C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Asteroids\Asteroids.h(21,30): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
 C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Asteroids\Asteroids.h(22,30): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Asteroids\Asteroids.h(25,34): warning C4244: 'initializing': conversion from 'int' to 'GLfloat', possible loss of data
-C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Enemy\Enemy.h(20,34): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Enemy\Enemy.h(21,30): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Asteroids\Asteroids.h(23,30): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Asteroids\Asteroids.h(26,34): warning C4244: 'initializing': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Enemy\Enemy.h(21,34): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
 C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Enemy\Enemy.h(22,30): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Game\GameState.cpp(208,56): warning C4244: '-=': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Game\GameState.cpp(322,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Game\GameState.cpp(379,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Game\GameState.cpp(433,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Game\GameState.cpp(449,22): warning C4018: '<': signed/unsigned mismatch
-C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Game\GameState.cpp(504,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Game\GameState.cpp(510,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Game\GameState.cpp(517,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Game\GameState.cpp(522,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Enemy\Enemy.h(23,30): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Game\GameState.cpp(221,56): warning C4244: '-=': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Game\GameState.cpp(335,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Game\GameState.cpp(392,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Game\GameState.cpp(446,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Game\GameState.cpp(462,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Game\GameState.cpp(517,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Game\GameState.cpp(523,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Game\GameState.cpp(530,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Game\GameState.cpp(535,20): warning C4018: '<': signed/unsigned mismatch
   main.cpp
-C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Asteroids\Asteroids.h(21,30): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
 C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Asteroids\Asteroids.h(22,30): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Asteroids\Asteroids.h(25,34): warning C4244: 'initializing': conversion from 'int' to 'GLfloat', possible loss of data
-C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Enemy\Enemy.h(20,34): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Enemy\Enemy.h(21,30): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Asteroids\Asteroids.h(23,30): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Asteroids\Asteroids.h(26,34): warning C4244: 'initializing': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Enemy\Enemy.h(21,34): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
 C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Enemy\Enemy.h(22,30): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Enemy\Enemy.h(23,30): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
   Physics.cpp
 C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Physics\Physics.cpp(7,20): warning C4018: '<': signed/unsigned mismatch
   Renderer.cpp
+  ResourceManager.cpp
   Shader.cpp
   Shape.cpp
   ShipLives.cpp
@@ -54,8 +63,71 @@ C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Physics\Physics.cpp(7,20):
   endGame.cpp
   menuGame.cpp
   stb.cpp
+  AABBCollision.cpp
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\xmemory(714,68): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+          with
+          [
+              _Ty=int
+          ]
+C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\include\entt\entt.hpp(16148): message : see reference to function template instantiation 'void std::_Default_allocator_traits<_Alloc>::construct<TransformComponent,glm::vec3&,_Ty,int,const char(&)[10]>(_Alloc &,_Objty *const ,glm::vec3 &,_Ty &&,int &&,const char (&)[10])' being compiled
+          with
+          [
+              _Alloc=std::allocator<TransformComponent>,
+              _Ty=glm::vec<3,float,glm::packed_highp>,
+              _Objty=TransformComponent
+          ]
+C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\include\entt\entt.hpp(16152): message : see reference to function template instantiation 'void std::_Default_allocator_traits<_Alloc>::construct<TransformComponent,glm::vec3&,_Ty,int,const char(&)[10]>(_Alloc &,_Objty *const ,glm::vec3 &,_Ty &&,int &&,const char (&)[10])' being compiled
+          with
+          [
+              _Alloc=std::allocator<TransformComponent>,
+              _Ty=glm::vec<3,float,glm::packed_highp>,
+              _Objty=TransformComponent
+          ]
+C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\include\entt\entt.hpp(16534): message : see reference to function template instantiation 'void entt::basic_storage<Entity,Type,std::allocator<Type>,void>::construct<glm::vec3&,_Ty,int,const char(&)[10]>(TransformComponent *,glm::vec3 &,_Ty &&,int &&,const char (&)[10])' being compiled
+          with
+          [
+              Entity=entt::entity,
+              Type=TransformComponent,
+              _Ty=glm::vec<3,float,glm::packed_highp>
+          ]
+C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\include\entt\entt.hpp(16537): message : see reference to function template instantiation 'void entt::basic_storage<Entity,Type,std::allocator<Type>,void>::construct<glm::vec3&,_Ty,int,const char(&)[10]>(TransformComponent *,glm::vec3 &,_Ty &&,int &&,const char (&)[10])' being compiled
+          with
+          [
+              Entity=entt::entity,
+              Type=TransformComponent,
+              _Ty=glm::vec<3,float,glm::packed_highp>
+          ]
+C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\include\entt\entt.hpp(16877): message : see reference to function template instantiation 'TransformComponent &entt::basic_storage<Entity,Type,std::allocator<Type>,void>::emplace<glm::vec3&,_Ty,int,const char(&)[10]>(const entt::entity,glm::vec3 &,_Ty &&,int &&,const char (&)[10])' being compiled
+          with
+          [
+              Entity=entt::entity,
+              Type=TransformComponent,
+              _Ty=glm::vec<3,float,glm::packed_highp>
+          ]
+C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\include\entt\entt.hpp(16878): message : see reference to function template instantiation 'TransformComponent &entt::basic_storage<Entity,Type,std::allocator<Type>,void>::emplace<glm::vec3&,_Ty,int,const char(&)[10]>(const entt::entity,glm::vec3 &,_Ty &&,int &&,const char (&)[10])' being compiled
+          with
+          [
+              Entity=entt::entity,
+              Type=TransformComponent,
+              _Ty=glm::vec<3,float,glm::packed_highp>
+          ]
+C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\include\entt\entt.hpp(23560): message : see reference to function template instantiation 'TransformComponent &entt::sigh_storage_mixin<entt::basic_storage<Entity,Type,std::allocator<Type>,void>>::emplace<glm::vec3&,_Ty,int,const char(&)[10]>(const entt::entity,glm::vec3 &,_Ty &&,int &&,const char (&)[10])' being compiled
+          with
+          [
+              Entity=entt::entity,
+              Type=TransformComponent,
+              _Ty=glm::vec<3,float,glm::packed_highp>
+          ]
+C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Systems\AABBCollision.cpp(24): message : see reference to function template instantiation 'TransformComponent &entt::basic_registry<entt::entity>::emplace<TransformComponent,glm::vec3&,glm::vec<3,float,glm::packed_highp>,int,const char(&)[10]>(const entt::entity,glm::vec3 &,glm::vec<3,float,glm::packed_highp> &&,int &&,const char (&)[10])' being compiled
+  GameOver.cpp
+  MoveSystem.cpp
+  Compiling...
+  respawnSystem.cpp
+  SATCollision.cpp
+C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Systems\SATCollision.cpp(120,20): warning C4018: '<': signed/unsigned mismatch
   Generating code
-  Previous IPDB not found, fall back to full compilation.
-  All 804 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  2429 of 2718 functions (89.4%) were compiled, the rest were copied from previous compilation.
+    1966 functions were new in current compilation
+    36 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   V_GameEngine.vcxproj -> C:\Users\14168\source\repos\V_GameEngine\Release\V_GameEngine.exe
