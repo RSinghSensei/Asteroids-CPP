@@ -1,3 +1,2 @@
-﻿  LINK : C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Debug\V_GameEngine.exe not found or not built by the last incremental link; performing full link
-LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+﻿  glad.c
   V_GameEngine.vcxproj -> C:\Users\14168\source\repos\V_GameEngine\V_GameEngine\Debug\V_GameEngine.exe

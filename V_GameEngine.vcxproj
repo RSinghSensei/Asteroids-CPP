@@ -92,13 +92,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Triangle\Triangle\glad.c" />
     <ClCompile Include="Asteroids\Asteroids.cpp" />
     <ClCompile Include="Bullet\Bullet.cpp" />
     <ClCompile Include="Enemy\Enemy.cpp" />
     <ClCompile Include="Game\ecsPlayState.cpp" />
     <ClCompile Include="Game\game.cpp" />
     <ClCompile Include="Game\GameState.cpp" />
+    <ClCompile Include="glad.c" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Physics\Physics.cpp" />
     <ClCompile Include="Renderer\Renderer.cpp" />
